@@ -20,6 +20,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data.dataset import Dataset
 
+import sys
+sys.path.append("./melgan_neurips")
 from melgan_neutrips.hubconf import load_melgan
 
 SAMPLING_RATE = 48000  # Fixed sampling rate
