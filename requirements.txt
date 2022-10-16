@@ -3,3 +3,5 @@ torchvision==0.8.2
 torchaudio==0.7.2
 tqdm
 librosa
+pyyaml
+tensorboard

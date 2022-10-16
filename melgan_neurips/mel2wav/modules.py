@@ -98,8 +98,8 @@ class ResnetBlock(nn.Module):
 class Generator(nn.Module):
     def __init__(self, input_size, ngf, n_residual_layers):
         super().__init__()
-        ratios = [8, 8, 2, 2]
-        self.hop_length = np.prod(ratios)
+        ratios = [16, 8, 2, 2]
+        self.hop_length = 512 #np.prod(ratios)
         mult = int(2 ** len(ratios))
 
         model = [
