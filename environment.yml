@@ -29,7 +29,7 @@ dependencies:
   - chardet=4.0.0=py39hf3d152e_1
   - click=7.1.2=pyh9f0ad1d_0
   - cryptography=3.4.4=py39h95dcef6_0
-  - cudatoolkit=11.0.3=h15472ef_8
+  - cudatoolkit=10.2
   - cycler=0.10.0=py_2
   - decorator=4.4.2=py_0
   - ffmpeg=4.3.1=hca11adc_2
@@ -118,7 +118,7 @@ dependencies:
   - python=3.9.2=hffdb5ce_0_cpython
   - python-dateutil=2.8.1=py_0
   - python_abi=3.9=1_cp39
-  - pytorch=1.7.1=py3.9_cuda11.0.221_cudnn8.0.5_0
+  - pytorch=1.7.1
   - pyzmq=22.0.3=py39hea8fd45_0
   - readline=8.0=he28a2e2_2
   - requests=2.25.1=pyhd3deb0d_0
@@ -136,8 +136,8 @@ dependencies:
   - threadpoolctl=2.1.0=pyh5ca1d4c_0
   - tk=8.6.10=h21135ba_1
   - toml=0.10.2=pyhd8ed1ab_0
-  - torchaudio=0.7.2=py39
-  - torchvision=0.8.2=py39_cu110
+  - torchaudio=0.7.2
+  - torchvision=0.8.2
   - tornado=6.1=py39h3811e60_1
   - tqdm=4.58.0=pyhd8ed1ab_0
   - traitlets=5.0.5=py_0
