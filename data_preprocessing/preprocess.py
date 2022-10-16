@@ -22,7 +22,7 @@ from torch.utils.data.dataset import Dataset
 
 from melgan_neutrips.hubconf import load_melgan
 
-SAMPLING_RATE = 22050  # Fixed sampling rate
+SAMPLING_RATE = 48000  # Fixed sampling rate
 
 
 def normalize_mel(wavspath):

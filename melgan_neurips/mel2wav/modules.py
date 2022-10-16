@@ -24,15 +24,25 @@ def WNConvTranspose1d(*args, **kwargs):
 
 
 class Audio2Mel(nn.Module):
+    '''
+    Reference: https://github.com/NVIDIA/tacotron2/issues/322#issuecomment-649802592
+
+    filter_length=2048,
+    hop_length=512,
+    win_length=2048,
+    n_mel_channels=80,
+    mel_fmin=0.0,
+    mel_fmax=16000.0
+    '''
     def __init__(
         self,
-        n_fft=1024,
-        hop_length=256,
-        win_length=1024,
-        sampling_rate=22050,
+        n_fft=2048,
+        hop_length=512,
+        win_length=2048,
+        sampling_rate=48000,
         n_mel_channels=80,
         mel_fmin=0.0,
-        mel_fmax=None,
+        mel_fmax=16000.0,
     ):
         super().__init__()
         ##############################################
