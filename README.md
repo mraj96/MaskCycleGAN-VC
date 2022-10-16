@@ -50,18 +50,18 @@ The authors of the paper used the dataset from the Spoke task of [Voice Conversi
 
 Download the dataset from the command line.
 ```
-wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_training.zip?sequence=2&isAllowed=y
-wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_evaluation.zip?sequence=3&isAllowed=y
-wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_reference.zip?sequence=5&isAllowed=y
+wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_training.zip
+wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_evaluation.zip
+wget --no-check-certificate https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_database_reference.zip
 ```
 
 Unzip the dataset file.
 ```
 mkdir vcc2018
 apt-get install unzip
-unzip vcc2018_database_training.zip?sequence=2 -d vcc2018/
-unzip vcc2018_database_evaluation.zip?sequence=3 -d vcc2018/
-unzip vcc2018_database_reference.zip?sequence=5 -d vcc2018/
+unzip vcc2018_database_training.zip -d vcc2018/
+unzip vcc2018_database_evaluation.zip -d vcc2018/
+unzip vcc2018_database_reference.zip -d vcc2018/
 mv -v vcc2018/vcc2018_reference/* vcc2018/vcc2018_evaluation
 rm -rf vcc2018/vcc2018_reference
 ```
@@ -71,16 +71,16 @@ rm -rf vcc2018/vcc2018_reference
 To expedite training, we preprocess the dataset by converting waveforms to melspectograms, then save the spectrograms as pickle files `<speaker_id>normalized.pickle` and normalization statistics (mean, std) as npz files `<speaker_id>_norm_stats.npz`. We convert waveforms to spectrograms using a [melgan vocoder](https://github.com/descriptinc/melgan-neurips) to ensure that you can decode voice converted spectrograms to waveform and listen to your samples during inference.
 
 ```
-python data_preprocessing/preprocess_vcc2018.py \
-  --data_directory vcc2018/vcc2018_training \
-  --preprocessed_data_directory vcc2018_preprocessed/vcc2018_training \
+python data_preprocessing/preprocess.py \
+  --data_directory ../vcc2018/vcc2018_training \
+  --preprocessed_data_directory ../vcc2018_preprocessed/vcc2018_training \
   --speaker_ids VCC2SF1 VCC2SF2 VCC2SF3 VCC2SF4 VCC2SM1 VCC2SM2 VCC2SM3 VCC2SM4 VCC2TF1 VCC2TF2 VCC2TM1 VCC2TM2
 ```
 
 ```
-python data_preprocessing/preprocess_vcc2018.py \
-  --data_directory vcc2018/vcc2018_evaluation \
-  --preprocessed_data_directory vcc2018_preprocessed/vcc2018_evaluation \
+python data_preprocessing/preprocess.py \
+  --data_directory ../vcc2018/vcc2018_evaluation \
+  --preprocessed_data_directory ../vcc2018_preprocessed/vcc2018_evaluation \
   --speaker_ids VCC2SF1 VCC2SF2 VCC2SF3 VCC2SF4 VCC2SM1 VCC2SM2 VCC2SM3 VCC2SM4 VCC2TF1 VCC2TF2 VCC2TM1 VCC2TM2
 ```
 
